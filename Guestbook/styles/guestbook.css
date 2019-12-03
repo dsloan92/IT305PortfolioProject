@@ -1,0 +1,12 @@
+#other-block {
+    display: none;
+}
+
+.err {
+    color: darkred;
+    visibility: hidden;
+}
+
+#email-formats{
+    visibility: hidden;
+}

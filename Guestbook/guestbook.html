@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/guestbook.css">
+    <title>Guestbook</title>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+    <h1 class="display-3">Sign My Guestbook!</h1>
+</div>
+<div class = "container"> <!--Container div for full form -->
+
+<form id ="guestbook-form" method="post" action="confirmation.php">
+    <fieldset class="form-group "> <!--text-center-->
+        <legend class = text-center>Complete Form to Sign Up</legend>
+
+        <div class="form-row"> <!-- First, Last name div -->
+            <div class="form-group col-md-6">
+                <label for="firstName">First Name</label>
+                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name">
+                <span class = "err" id = "err-fname">Please Enter a First Name</span>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="lastName">Last Name</label>
+                <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name">
+                <span class = "err" id = "err-lname">Please Enter a Last Name</span>
+
+            </div>
+        </div> <!-- First, Last name div -->
+
+        <div class="form-row"> <!-- Title/Company div -->
+            <div class="form-group col-md-6">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title" name ="title" placeholder="Title">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="company">Company</label>
+                <input type="text" class="form-control" id="company" name="company" placeholder="Company">
+            </div>
+        </div> <!-- Title/Company div -->
+
+        <div class="form-row"> <!-- LinkedIn/Email -->
+            <div class="form-group col-md-6">
+                <label for="linkedIn">LinkedIn URL</label>
+                <input type="text" class="form-control" id="linkedIn" name="linkedIn" placeholder="LinkedIn URL">
+                <span class = "err" id = "err-linkedIn">Please enter a valid URL</span>
+
+            </div>
+            <div class="form-group col-md-6">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+                <span class = "err" id = "err-email">Please enter a valid email containing an @ symbol and dot(.)</span>
+
+            </div>
+        </div> <!-- LinkedIn/Email div -->
+
+        <div class = "form-row">
+            <div class="form-group col-md-6 ">
+                <div class="form-check form-check-inline">  <!-- mailing list checkbox -->
+                    <label class="form-check-label" for="mailingList">Please add me to your mailing list &nbsp;</label>
+                     <input class="form-check-input" type="checkbox" value="yes-mailingList" id="mailingList" name="mailingList">
+                </div> <!-- mailing list checkbox -->
+
+                <span class = "err" id = "err-email-list"><br>Please enter an email in the email field</span>
+
+            </div>
+
+            <div id = "email-formats" class = "form-group col-md-6">
+                <p class ="form-check-inline">Choose an email format:</p>
+                <div class="form-check form-check-inline text-left"> <!-- email format -->
+                    <input class="form-check-input" type="radio" name="emailFormat" id="HTML" value="HTML">
+                    <label class="form-check-label" for="HTML">HTML</label>
+
+                </div>
+                <div class="form-check form-check-inline text-left">
+                    <input class="form-check-input" type="radio" name="emailFormat" id="text" value="Text">
+                    <label class="form-check-label" for="text">Text</label>
+                </div> <!-- email format -->
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="meet">How Did We Meet?</label>
+                <select class="form-control" id="meet" name = "meet" onchange="showfield(this.options[this.selectedIndex].value)">
+                    <option value="none">Please Select</option>
+                    <option value="meetup">Meetup</option>
+                    <option value="jobFair">Job Fair</option>
+                    <option value="noMeetup">Haven't Met Yet</option>
+                    <option value="meet-other">Other</option>
+                </select>
+                <span class = "err" id = "err-meet">Please answer</span>
+
+            </div>
+            <div id ="other-block" class="form-group col-md-6"> <!-- comment div -->
+                <label for="other-meet">"Other" was chosen, Please Explain</label>
+                <textarea class="form-control" id="other-meet" name = "commentMeet" placeholder="Please describe how we met." rows="3" cols="20"></textarea>
+                <span class = "err" id = "err-meet-text">Please answer</span>
+
+            </div> <!-- comment div -->
+
+        </div>
+
+        <div id = "comment-block" class="form-group text-left"> <!-- comment div -->
+            <label for="comment">Comments/Questions</label>
+            <div class="form-row">
+                <div class="form-group col-6">
+            <textarea class="form-control" id="comment" placeholder="Enter any comments or questions" name = "comment" rows="3" cols="20"></textarea>
+                </div> <!-- col -->
+            </div> <!-- row-->
+        </div> <!-- comment div -->
+
+        <button id="submit" type="submit" class="btn btn-primary">
+            Submit
+        </button>
+        <div class = "float-right">
+        <a id = "admin" href="admin.php">Navigate to Admin Page</a>
+        </div>
+    </fieldset>
+
+</div>
+</form>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="js/jquery.slim.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/guestbook.js"></script>
+
+
+</body>
+</html>

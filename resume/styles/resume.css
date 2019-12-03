@@ -1,0 +1,25 @@
+.right {
+    float: right;
+
+}
+
+#bootstrap-override h1 {
+    justify-content: center;
+}
+
+.container {
+    clear: left;
+}
+/*
+.right li {
+    }*/
+
+.left{
+    float: left;
+}
+
+.h2 {
+    float: none;
+}
+
+
